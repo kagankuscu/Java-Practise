@@ -21,16 +21,16 @@ public class Session {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long session_id;
     private String session_name;
-    private String session_descripsion;
+    private String session_description;
     private Integer session_length;
 
-    @ManyToMany
-    @JoinTable(
-        name = "session_speakers",
-        joinColumns = @JoinColumn(name = "session_id"),
-        inverseJoinColumns = @JoinColumn(name = "speaker_id")
-    )
-    private List<Session> speakers;
+    // @ManyToMany
+    // @JoinTable(
+    //     name = "session_speakers",
+    //     joinColumns = @JoinColumn(name = "session_id"),
+    //     inverseJoinColumns = @JoinColumn(name = "speaker_id")
+    // )
+    // private List<Session> speakers;
 
     public Session() {
     }
@@ -52,11 +52,11 @@ public class Session {
     }
 
     public String getSession_descripsion() {
-        return session_descripsion;
+        return session_description;
     }
 
-    public void setSession_descripsion(String session_descripsion) {
-        this.session_descripsion = session_descripsion;
+    public void setSession_descripsion(String session_description) {
+        this.session_description = session_description;
     }
 
     public Integer getSession_length() {
@@ -67,13 +67,6 @@ public class Session {
         this.session_length = session_length;
     }
 
-    public List<Session> getSpeakers() {
-        return speakers;
-    }
-
-    public void setSpeakers(List<Session> speakers) {
-        this.speakers = speakers;
-    }
 
 
 }
