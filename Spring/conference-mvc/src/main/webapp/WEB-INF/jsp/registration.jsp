@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <h1>Registration</h1>
+    <h1><spring:message code="registration" /></h1>
     <form:form modelAttribute="registration">
         <form:errors path="*" cssClass="errorblock" element="div" />
         <table>
