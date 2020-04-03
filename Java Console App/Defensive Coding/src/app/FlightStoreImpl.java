@@ -2,7 +2,7 @@ package app;
 
 import java.util.List;
 
-public class FlightsStoreImpl implements FlightStore {
+public class FlightStoreImpl implements FlightStore {
 
     @Override
     public List<Flight> getFlights() {

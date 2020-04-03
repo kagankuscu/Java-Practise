@@ -61,6 +61,6 @@ public class FlightSearchService {
     }
 
     public static FlightSearchService flightSearch() {
-        return new FlightSearchService(new FlightsStoreImpl());
+        return new FlightSearchService(new FlightStoreImpl());
     }
 }

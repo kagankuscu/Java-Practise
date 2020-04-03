@@ -1,7 +1,9 @@
-package app;
+package app.newApp;
 
 import java.util.Arrays;
 import java.util.List;
+
+import app.Flight;
 
 public class AppNew {
     public static void main(String[] args) {

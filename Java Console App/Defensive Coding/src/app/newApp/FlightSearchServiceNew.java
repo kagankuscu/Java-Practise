@@ -1,20 +1,24 @@
-package app;
+package app.newApp;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import app.Flight;
+import app.FlightStore;
+import app.FlightStoreImpl;
+
 public class FlightSearchServiceNew {
     
-    private FlightStore flightsStore;
+    private FlightStore flightStore;
 
     public FlightSearchServiceNew(FlightStore store) {
-        this.flightsStore = store;
+        this.flightStore = store;
     }
 
     public List<Flight> search(SearchRequest request) {
-        List<Flight> flights = flightsStore.getFlights();
+        List<Flight> flights = flightStore.getFlights();
 
         return flights.stream()
                 .filter(f -> f.getFromDest().equals(request.getFromDestination()))
@@ -26,6 +30,6 @@ public class FlightSearchServiceNew {
     }
 
     public static FlightSearchServiceNew flightSearch() {
-        return new FlightSearchServiceNew(new FlightsStoreImpl());
+        return new FlightSearchServiceNew(new FlightStoreImpl());
     }
 }
