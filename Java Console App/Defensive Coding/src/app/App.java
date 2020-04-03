@@ -6,14 +6,14 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
         
-        int passegerNum = Integer.parseInt(args[0]);
+        int passengerNum = Integer.parseInt(args[0]);
         String departDate = args[1];
         String fromDestination = args[2];
         String toDestination = args[3];
 
         FlightSearchService searchService = FlightSearchService.flightSearch();
 
-        List<Flight> outboundFlights = searchService.search(fromDestination, toDestination, departDate, passegerNum);
+        List<Flight> outboundFlights = searchService.search(fromDestination, toDestination, departDate, passengerNum);
 
         displayFligths(outboundFlights);
     }

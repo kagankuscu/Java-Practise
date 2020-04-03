@@ -10,7 +10,7 @@ public class FlightsStoreImpl implements FlightStore {
             // date format DD-MM-YYYY
             new Flight("Boston","New York", "15-10-2020",50),
             new Flight("Boston","New York", "16-11-2020",10),
-            new Flight("Boston","New York", "17-9-2020",1),
+            new Flight("Boston","New York", "17-09-2020",1),
 
 
             new Flight("Boston","Washington", "15-10-2020",20),
