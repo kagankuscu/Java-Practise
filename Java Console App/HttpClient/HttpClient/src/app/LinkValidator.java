@@ -13,7 +13,12 @@ public class LinkValidator {
     public static void main(String[] args) throws Exception {
         client = HttpClient.newHttpClient();
         
-        Files.lines(Path.of("urls.txt")).map(LinkValidator::validateLink).forEach(System.out::println);
+        try (var openFiles = Files.lines(Path.of("urls.txt"))) {
+            openFiles.map(LinkValidator::validateLink).forEach(System.out::println);
+
+        }  catch (IOException e) {
+            throw new IllegalArgumentException("There is no files.");
+        }
     }
 
     private static String validateLink(String link) {
