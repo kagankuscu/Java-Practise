@@ -34,7 +34,8 @@ public class SimpleServlet extends HttpServlet {
                     "<product>%s</product>" +
                     "</application>" ,name, appName);
         } else {
-            resp.sendRedirect("index.jsp");
+            // resp.sendRedirect("index.jsp");
+            throw new ServletException("A name should be entered.");
         }
     }
 
@@ -45,7 +46,8 @@ public class SimpleServlet extends HttpServlet {
         if ( name != null && name != "") {
             resp.getWriter().printf("Hello %s", name);
         } else {
-            resp.sendRedirect("index.jsp");
+            // resp.sendRedirect("index.jsp");
+            throw new ServletException("A name should be entered.");
         }
     }
 
