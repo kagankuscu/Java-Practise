@@ -20,6 +20,7 @@ public class SimpleServlet extends HttpServlet {
     public void init() throws ServletException {
         // appName = getInitParameter("ProductName");
         appName = getServletContext().getInitParameter("ProductName"); // Context parameter
+        getServletContext().setAttribute("appName", appName);
     }
 
     @Override

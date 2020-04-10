@@ -11,6 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 public class ControllerServlet extends HttpServlet {
 
     @Override
+    public void init() throws ServletException {
+        ApplicationSetting applicationSetting = new ApplicationSetting();
+        CssClass cssClass = new CssClass();
+        cssClass.setName("redUser");
+        applicationSetting.setFormCssClass(cssClass);
+        getServletContext().setAttribute("app", applicationSetting);
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = new User();
         user.setName("Kagan");

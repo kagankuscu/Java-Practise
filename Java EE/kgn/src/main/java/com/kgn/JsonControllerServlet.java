@@ -20,6 +20,6 @@ public class JsonControllerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
-        resp.getWriter().printf("{ %s:%s }", jsonName, message);
+        resp.getWriter().printf("{ message: { %s:%s }}", jsonName, message);
     }
 }
