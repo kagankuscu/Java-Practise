@@ -1,4 +1,5 @@
 <%@ page import="com.kgn.User" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -21,8 +22,16 @@
             <div class="col-md-9">
                 <tabset>
                     <tab heading="Search">
+                        <c:out value="Hello"/>
                         <div class="${app.formCssClass.name}">
-                            <h2>Welcome: ${user.name} </h2>
+                            <c:choose>
+                                <c:when test="${!empty user.name}">
+                                    <h2>Welcome: ${user.name} </h2>
+                                </c:when>
+                                <c:otherwise>
+                                    <h2>Welcome: whoever you are </h2>
+                                </c:otherwise>
+                            </c:choose>
                             <form action="home" method="post">
                                 <p>
                                     Name: <input type="text" name="name"/>
