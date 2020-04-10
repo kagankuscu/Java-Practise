@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- <title>${initParam.ProductName}</title> -->
-    <title>${appName}</title>
+    <title>${initParam.ProductName}</title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="metro-bootstrap-master/css/metro-bootstrap.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="app.css" type="text/css">
