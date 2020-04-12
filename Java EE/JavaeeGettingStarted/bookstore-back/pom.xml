@@ -24,6 +24,8 @@
     </dependencies>
 
     <build>
+        <finalName>bookstore-back</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -71,7 +73,6 @@
                 </executions>
             </plugin>
         </plugins>
-        <finalName>bookstore-back</finalName>
     </build>
 
 </project>
