@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="bookstore-back" target="1.7" />
+      <module name="bookstore-back" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
