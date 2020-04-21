@@ -1,6 +1,7 @@
-package org.agoncal.application.cdbookstore.view.shopping;
+package com.pluralsight.bookstore.view.shopping;
 
-import org.agoncal.application.cdbookstore.model.Item;
+
+import com.pluralsight.bookstore.model.Item;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;

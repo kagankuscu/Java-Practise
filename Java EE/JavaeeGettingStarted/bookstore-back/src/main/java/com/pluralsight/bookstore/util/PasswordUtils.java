@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.util;
+package com.pluralsight.bookstore.util;
 
 import java.security.MessageDigest;
 import java.util.Base64;

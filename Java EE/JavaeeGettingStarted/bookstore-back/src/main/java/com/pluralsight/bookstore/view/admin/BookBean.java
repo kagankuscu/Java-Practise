@@ -1,7 +1,8 @@
-package org.agoncal.application.cdbookstore.view.admin;
+package com.pluralsight.bookstore.view.admin;
 
-import org.agoncal.application.cdbookstore.model.Book;
-import org.agoncal.application.cdbookstore.model.Language;
+import com.pluralsight.bookstore.model.Book;
+import com.pluralsight.bookstore.model.Language;
+import com.pluralsight.bookstore.util.NumberGenerator;
 
 import javax.annotation.Resource;
 import javax.ejb.SessionContext;
@@ -41,9 +42,9 @@ public class BookBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-   /*
-    * Support creating and retrieving Book entities
-    */
+    /*
+     * Support creating and retrieving Book entities
+     */
 
     private Long id;
     private Book book;
@@ -63,9 +64,9 @@ public class BookBean implements Serializable {
         return this.id;
     }
 
-   /*
-    * Support updating and deleting Book entities
-    */
+    /*
+     * Support updating and deleting Book entities
+     */
 
     public void setId(Long id) {
         this.id = id;
@@ -75,9 +76,9 @@ public class BookBean implements Serializable {
         return this.book;
     }
 
-   /*
-    * Support searching Book entities with pagination
-    */
+    /*
+     * Support searching Book entities with pagination
+     */
 
     public void setBook(Book book) {
         this.book = book;
@@ -113,11 +114,15 @@ public class BookBean implements Serializable {
         return this.entityManager.find(Book.class, id);
     }
 
+    @Inject
+    private NumberGenerator generator;
+
     public String update() {
         this.conversation.end();
 
         try {
             if (this.id == null) {
+                book.setIsbn(generator.generatorNumber());
                 this.entityManager.persist(this.book);
                 return "search?faces-redirect=true";
             } else {
@@ -219,7 +224,7 @@ public class BookBean implements Serializable {
                     builder.lower(root.<String>get("isbn")),
                     '%' + isbn.toLowerCase() + '%'));
         }
-        Integer nbOfPage = this.example.getNbOfPage();
+        Integer nbOfPage = this.example.getNbOfPages();
         if (nbOfPage != null && nbOfPage.intValue() != 0) {
             predicatesList.add(builder.equal(root.get("nbOfPage"), nbOfPage));
         }
@@ -231,9 +236,9 @@ public class BookBean implements Serializable {
         return predicatesList.toArray(new Predicate[predicatesList.size()]);
     }
 
-   /*
-    * Support listing and POSTing back Book entities (e.g. from inside an HtmlSelectOneMenu)
-    */
+    /*
+     * Support listing and POSTing back Book entities (e.g. from inside an HtmlSelectOneMenu)
+     */
 
     public List<Book> getPageItems() {
         return this.pageItems;
@@ -251,9 +256,9 @@ public class BookBean implements Serializable {
                 criteria.select(criteria.from(Book.class))).getResultList();
     }
 
-   /*
-    * Support adding children to bidirectional, one-to-many tables
-    */
+    /*
+     * Support adding children to bidirectional, one-to-many tables
+     */
 
     public Converter getConverter() {
 

@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.model;
+package com.pluralsight.bookstore.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.model;
+package com.pluralsight.bookstore.model;
 
 import javax.persistence.Column;
 import javax.persistence.Convert;
@@ -6,8 +6,8 @@ import javax.persistence.Entity;
 
 /**
  * @author Antonio Goncalves
- *         http://www.antoniogoncalves.org
- *         --
+ * http://www.antoniogoncalves.org
+ * --
  */
 
 @Entity

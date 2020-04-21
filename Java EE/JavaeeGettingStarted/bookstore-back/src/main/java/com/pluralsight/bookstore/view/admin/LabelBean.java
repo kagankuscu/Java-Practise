@@ -1,6 +1,7 @@
-package org.agoncal.application.cdbookstore.view.admin;
+package com.pluralsight.bookstore.view.admin;
 
-import org.agoncal.application.cdbookstore.model.Label;
+
+import com.pluralsight.bookstore.model.Label;
 
 import javax.annotation.Resource;
 import javax.ejb.SessionContext;

@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.view.admin;
+package com.pluralsight.bookstore.view.admin;
 
 import org.agoncal.application.cdbookstore.model.Country;
 

@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.model;
+package com.pluralsight.bookstore.model;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -6,8 +6,8 @@ import java.io.Serializable;
 
 /**
  * @author Antonio Goncalves
- *         http://www.antoniogoncalves.org
- *         --
+ * http://www.antoniogoncalves.org
+ * --
  */
 
 public class Address implements Serializable {

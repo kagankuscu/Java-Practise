@@ -1,6 +1,6 @@
-package org.agoncal.application.cdbookstore.rest;
+package com.pluralsight.bookstore.rest;
 
-import org.agoncal.application.cdbookstore.model.Book;
+import com.pluralsight.bookstore.model.Book;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -11,8 +11,8 @@ import java.util.List;
 
 /**
  * @author Antonio Goncalves
- *         http://www.antoniogoncalves.org
- *         --
+ * http://www.antoniogoncalves.org
+ * --
  */
 @XmlRootElement
 @XmlSeeAlso(Book.class)

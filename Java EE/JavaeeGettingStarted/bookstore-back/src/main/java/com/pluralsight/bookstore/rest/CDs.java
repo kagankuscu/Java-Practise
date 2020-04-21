@@ -1,6 +1,7 @@
-package org.agoncal.application.cdbookstore.rest;
+package com.pluralsight.bookstore.rest;
 
-import org.agoncal.application.cdbookstore.model.CD;
+
+import com.pluralsight.bookstore.model.CD;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

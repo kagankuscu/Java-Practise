@@ -2,7 +2,6 @@ package com.pluralsight.bookstore.rest;
 
 import com.pluralsight.bookstore.model.Book;
 import com.pluralsight.bookstore.repository.BookRepository;
-
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

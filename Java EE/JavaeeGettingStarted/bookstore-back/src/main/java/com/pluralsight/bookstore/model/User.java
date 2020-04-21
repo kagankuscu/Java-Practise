@@ -1,6 +1,7 @@
-package org.agoncal.application.cdbookstore.model;
+package com.pluralsight.bookstore.model;
 
-import org.agoncal.application.cdbookstore.util.PasswordUtils;
+
+import com.pluralsight.bookstore.util.PasswordUtils;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

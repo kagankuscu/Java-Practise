@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.model;
+package com.pluralsight.bookstore.model;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -7,8 +7,8 @@ import java.util.Set;
 
 /**
  * @author Antonio Goncalves
- *         http://www.antoniogoncalves.org
- *         --
+ * http://www.antoniogoncalves.org
+ * --
  */
 
 @Entity

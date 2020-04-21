@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.websocket;
+package com.pluralsight.bookstore.websocket;
 
 import javax.inject.Inject;
 import javax.websocket.*;

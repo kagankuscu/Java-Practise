@@ -1,9 +1,10 @@
-package org.agoncal.application.cdbookstore.model;
+package com.pluralsight.bookstore.model;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
-import static org.agoncal.application.cdbookstore.model.Language.*;
+import static com.pluralsight.bookstore.model.Language.*;
+
 
 /**
  * @author Antonio Goncalves

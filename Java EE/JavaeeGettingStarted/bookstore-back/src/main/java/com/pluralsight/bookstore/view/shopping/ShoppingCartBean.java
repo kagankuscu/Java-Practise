@@ -1,9 +1,8 @@
-package org.agoncal.application.cdbookstore.view.shopping;
+package com.pluralsight.bookstore.view.shopping;
 
-import org.agoncal.application.cdbookstore.model.*;
-import org.agoncal.application.cdbookstore.view.account.AccountBean;
-import org.agoncal.application.invoice.model.Invoice;
-import org.agoncal.application.invoice.model.InvoiceLine;
+
+import com.pluralsight.bookstore.model.*;
+import com.pluralsight.bookstore.view.account.AccountBean;
 
 import javax.annotation.Resource;
 import javax.enterprise.context.SessionScoped;

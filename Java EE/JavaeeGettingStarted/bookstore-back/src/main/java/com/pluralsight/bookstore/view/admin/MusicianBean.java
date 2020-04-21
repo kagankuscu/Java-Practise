@@ -1,6 +1,7 @@
-package org.agoncal.application.cdbookstore.view.admin;
+package com.pluralsight.bookstore.view.admin;
 
-import org.agoncal.application.cdbookstore.model.Musician;
+
+import com.pluralsight.bookstore.model.Musician;
 
 import javax.annotation.Resource;
 import javax.ejb.SessionContext;

@@ -1,7 +1,7 @@
-package org.agoncal.application.cdbookstore.view.shopping;
+package com.pluralsight.bookstore.view.shopping;
 
-import org.agoncal.application.cdbookstore.model.Item;
-import org.agoncal.application.cdbookstore.util.Auditable;
+
+import com.pluralsight.bookstore.model.Item;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;

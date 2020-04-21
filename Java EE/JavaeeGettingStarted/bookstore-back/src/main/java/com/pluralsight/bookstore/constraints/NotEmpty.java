@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.constraints;
+package com.pluralsight.bookstore.constraints;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -7,8 +7,8 @@ import java.lang.annotation.*;
 
 /**
  * @author Antonio Goncalves
- *         http://www.antoniogoncalves.org
- *         --
+ * http://www.antoniogoncalves.org
+ * --
  */
 
 @Constraint(validatedBy = {})

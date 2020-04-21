@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.rest;
+package com.pluralsight.bookstore.rest;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

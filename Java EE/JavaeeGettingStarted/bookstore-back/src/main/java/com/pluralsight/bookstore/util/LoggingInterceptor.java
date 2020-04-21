@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.util;
+package com.pluralsight.bookstore.util;
 
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;

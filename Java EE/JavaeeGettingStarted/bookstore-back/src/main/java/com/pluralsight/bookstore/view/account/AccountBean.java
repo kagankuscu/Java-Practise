@@ -1,4 +1,4 @@
-package org.agoncal.application.cdbookstore.view.account;
+package com.pluralsight.bookstore.view.account;
 
 import com.thedeanda.lorem.LoremIpsum;
 import org.agoncal.application.cdbookstore.model.User;
