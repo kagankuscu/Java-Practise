@@ -17,4 +17,6 @@ public interface ContactService {
 
     // Delete
     void deleteContact(Long id);
+
+    List<Contact> getContactByCountryCode(String countryCode);
 }

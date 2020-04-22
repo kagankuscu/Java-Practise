@@ -46,4 +46,9 @@ public class ContactServiceImpl implements ContactService {
         deleteContact = getContactById(id);
         contactRepository.delete(deleteContact);
     }
+
+    @Override
+    public List<Contact> getContactByCountryCode(String countryCode) {
+        return contactRepository.getContactByCountryCode(countryCode);
+    }
 }

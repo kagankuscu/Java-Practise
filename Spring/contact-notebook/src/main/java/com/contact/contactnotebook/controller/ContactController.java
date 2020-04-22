@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -33,7 +34,7 @@ public class ContactController {
     }
 
     @PutMapping(value = {"/{id}"}, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public Contact updateContact(@PathVariable Long id, @RequestBody Contact contact) {
+    public Contact updateContact(@PathVariable Long id, @RequestBody @Valid Contact contact) {
         return service.updateContact(id,contact);
     }
 
@@ -42,4 +43,9 @@ public class ContactController {
         service.deleteContact(id);
     }
 
+    @GetMapping({"/countryCode/{countryCode}"})
+    public List<Contact> searchPhoneNumberByCountryCode(@PathVariable String countryCode) {
+        String addPlus = "+" + countryCode;
+        return service.getContactByCountryCode(countryCode);
+    }
 }
