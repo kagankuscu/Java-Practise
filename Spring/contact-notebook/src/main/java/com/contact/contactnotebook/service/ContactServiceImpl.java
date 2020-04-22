@@ -32,11 +32,10 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public Contact updateContact(Long id, Contact contact) {
-        Contact updateContact = new Contact();
-        updateContact = getContactById(id);
+        Contact updateContact = getContactById(id);
         updateContact.setFirstName(contact.getFirstName());
         updateContact.setLastName(contact.getLastName());
-        updateContact.setCountryCode(contact.getLastName());
+        updateContact.setCountryCode(contact.getCountryCode());
         updateContact.setPhoneNumber(contact.getPhoneNumber());
         return contactRepository.save(updateContact);
     }

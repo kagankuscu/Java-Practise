@@ -3,10 +3,12 @@ package com.contact.contactnotebook.controller;
 import com.contact.contactnotebook.model.Contact;
 import com.contact.contactnotebook.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequestMapping(path = "/api/contact")
@@ -15,7 +17,7 @@ public class ContactController {
     @Autowired
     private ContactService service;
 
-    @PostMapping(consumes = "application/json", produces = "application/json")
+    @PostMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     public Contact addContact(@RequestBody Contact contact) {
         return service.addContact(contact);
     }
@@ -30,7 +32,7 @@ public class ContactController {
         return service.getContactById(id);
     }
 
-    @PutMapping(value = {"/{id}"}, consumes = "application/json", produces = "application/json")
+    @PutMapping(value = {"/{id}"}, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     public Contact updateContact(@PathVariable Long id, @RequestBody Contact contact) {
         return service.updateContact(id,contact);
     }
