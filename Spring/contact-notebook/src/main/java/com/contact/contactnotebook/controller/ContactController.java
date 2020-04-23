@@ -3,7 +3,6 @@ package com.contact.contactnotebook.controller;
 import com.contact.contactnotebook.model.Contact;
 import com.contact.contactnotebook.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -34,8 +33,8 @@ public class ContactController {
     }
 
     @PutMapping(value = {"/{id}"}, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public Contact updateContact(@PathVariable Long id, @RequestBody @Valid Contact contact) {
-        return service.updateContact(id,contact);
+    public Contact updateContact(@RequestBody @Valid Contact contact) {
+        return service.updateContact(contact);
     }
 
     @DeleteMapping({"/{id}"})
@@ -45,7 +44,6 @@ public class ContactController {
 
     @GetMapping({"/countryCode/{countryCode}"})
     public List<Contact> searchPhoneNumberByCountryCode(@PathVariable String countryCode) {
-        String addPlus = "+" + countryCode;
-        return service.getContactByCountryCode(countryCode);
+        return service.findByCountryCode(countryCode);
     }
 }

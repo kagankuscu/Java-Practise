@@ -31,24 +31,17 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
-    public Contact updateContact(Long id, Contact contact) {
-        Contact updateContact = getContactById(id);
-        updateContact.setFirstName(contact.getFirstName());
-        updateContact.setLastName(contact.getLastName());
-        updateContact.setCountryCode(contact.getCountryCode());
-        updateContact.setPhoneNumber(contact.getPhoneNumber());
-        return contactRepository.save(updateContact);
+    public Contact updateContact(Contact contact) {
+        return contactRepository.save(contact);
     }
 
     @Override
     public void deleteContact(Long id) {
-        Contact deleteContact = new Contact();
-        deleteContact = getContactById(id);
-        contactRepository.delete(deleteContact);
+        contactRepository.deleteById(id);
     }
 
     @Override
-    public List<Contact> getContactByCountryCode(String countryCode) {
-        return contactRepository.getContactByCountryCode(countryCode);
+    public List<Contact> findByCountryCode(String countryCode) {
+        return contactRepository.findByCountryCode("+" + countryCode);
     }
 }

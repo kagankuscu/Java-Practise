@@ -13,10 +13,10 @@ public interface ContactService {
     Contact getContactById(Long id);
 
     // Update
-    Contact updateContact(Long id, Contact contact);
+    Contact updateContact(Contact contact);
 
     // Delete
     void deleteContact(Long id);
 
-    List<Contact> getContactByCountryCode(String countryCode);
+    List<Contact> findByCountryCode(String countryCode);
 }
