@@ -13,35 +13,51 @@ import java.util.List;
 public class ContactServiceImpl implements ContactService {
 
     @Autowired
-    private ContactRepository contactRepository;
+    private ContactRepository repository;
 
     @Override
     public Contact addContact(Contact contact) {
-        return contactRepository.save(contact);
+        return repository.save(contact);
     }
 
     @Override
     public List<Contact> getContacts() {
-        return contactRepository.findAll();
+        return repository.findAll();
     }
 
     @Override
     public Contact getContactById(Long id) {
-        return contactRepository.findById(id).orElse(new Contact());
+        return repository.findById(id).orElse(new Contact());
     }
 
     @Override
     public Contact updateContact(Contact contact) {
-        return contactRepository.save(contact);
+        return repository.save(contact);
     }
 
     @Override
     public void deleteContact(Long id) {
-        contactRepository.deleteById(id);
+        repository.deleteById(id);
+    }
+
+    // Query
+    @Override
+    public List<Contact> findByCountryCodeLike(String countryCode) {
+        return repository.findByCountryCodeLike("%" + countryCode);
     }
 
     @Override
-    public List<Contact> findByCountryCode(String countryCode) {
-        return contactRepository.findByCountryCode("+" + countryCode);
+    public List<Contact> findByFirstName(String firstName) {
+        return repository.findByFirstName(firstName);
+    }
+
+    @Override
+    public List<Contact> findByFirstNameAndLastName(String firstName, String lastName) {
+        return repository.findByFirstNameAndLastName(firstName, lastName);
+    }
+
+    @Override
+    public List<Contact> findByPhoneNumber(String phoneNumber) {
+        return repository.findByPhoneNumber(phoneNumber);
     }
 }

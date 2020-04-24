@@ -7,5 +7,9 @@ import java.util.List;
 
 public interface ContactRepository extends JpaRepository<Contact, Long> {
 
-    List<Contact> findByCountryCode(String countryCode);
+    List<Contact> findByCountryCodeLike(String countryCode);
+    List<Contact> findByFirstName(String firstName);
+    List<Contact> findByFirstNameAndLastName(String firstName, String lastName);
+    List<Contact> findByPhoneNumber(String phoneNumber);
+
 }

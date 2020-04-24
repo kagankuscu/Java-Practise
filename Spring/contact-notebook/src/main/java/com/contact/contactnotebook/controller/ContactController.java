@@ -17,8 +17,8 @@ public class ContactController {
     @Autowired
     private ContactService service;
 
-    @PostMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public Contact addContact(@RequestBody Contact contact) {
+    @PostMapping
+    public Contact addContact(@RequestBody @Valid Contact contact) {
         return service.addContact(contact);
     }
 
@@ -32,7 +32,7 @@ public class ContactController {
         return service.getContactById(id);
     }
 
-    @PutMapping(value = {"/{id}"}, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    @PutMapping(value = {"/{id}"})
     public Contact updateContact(@RequestBody @Valid Contact contact) {
         return service.updateContact(contact);
     }
@@ -42,8 +42,28 @@ public class ContactController {
         service.deleteContact(id);
     }
 
-    @GetMapping({"/countryCode/{countryCode}"})
-    public List<Contact> searchPhoneNumberByCountryCode(@PathVariable String countryCode) {
-        return service.findByCountryCode(countryCode);
+    // Query
+    @GetMapping({"/countryCode"})
+    @ResponseBody
+    public List<Contact> searchPhoneNumberByCountryCode(@RequestParam String countryCode) {
+        return service.findByCountryCodeLike(countryCode);
+    }
+
+    @GetMapping("/firstName")
+    @ResponseBody
+    public List<Contact> searchPhoneNumberByFirstName(@RequestParam String firstName) {
+        return service.findByFirstName(firstName);
+    }
+
+    @GetMapping({"/firstNameAndLastName"})
+    @ResponseBody
+    public List<Contact> searchPhoneNumberByFirstAndLastName(@RequestParam String firstName, @RequestParam String lastName) {
+        return service.findByFirstNameAndLastName(firstName, lastName);
+    }
+
+    @GetMapping({"/phoneNumber"})
+    @ResponseBody
+    public List<Contact> searchPhoneNumberByPhoneNumber(@RequestParam String phoneNumber) {
+        return service.findByPhoneNumber(phoneNumber);
     }
 }

@@ -18,5 +18,9 @@ public interface ContactService {
     // Delete
     void deleteContact(Long id);
 
-    List<Contact> findByCountryCode(String countryCode);
+    // Query
+    List<Contact> findByCountryCodeLike(String countryCode);
+    List<Contact> findByFirstName(String firstName);
+    List<Contact> findByFirstNameAndLastName(String firstName, String lastName);
+    List<Contact> findByPhoneNumber(String phoneNumber);
 }

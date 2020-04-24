@@ -2,6 +2,7 @@ package com.contact.contactnotebook.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -15,20 +16,23 @@ public class Contact {
     private Long id;
 
     @NotNull
+    @NotEmpty
     @Column(name = "first_name")
     private String firstName;
 
     @NotNull
+    @NotEmpty
     @Column(name = "last_name")
     private String lastName;
 
     @NotNull
     @Min(1)
+    @NotEmpty
     @Column(name = "country_code")
     private String countryCode;
 
     @NotNull
-    @Min(5)
+    @NotEmpty
     @Column(name = "phone_number")
     private String phoneNumber;
 
