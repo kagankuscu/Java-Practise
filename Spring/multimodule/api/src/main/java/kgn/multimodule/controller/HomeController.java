@@ -2,43 +2,22 @@ package kgn.multimodule.controller;
 
 import kgn.multimodule.model.User;
 import kgn.multimodule.repository.UserRepository;
-import kgn.multimodule.service.UserService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/user")
 public class HomeController {
 
-    private UserService service;
+    private UserRepository repository;
 
-    public HomeController(UserService service) {
-        this.service = service;
+    public HomeController(UserRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping
     public List<User> getUser() {
-        return service.getAll();
-    }
-
-    @PostMapping
-    public User add(@RequestBody User user) {
-        return service.add(user);
-    }
-
-    @GetMapping(path = "/{id}")
-    public User getById(@PathVariable Long id) {
-        return service.getById(id);
-    }
-
-    @PutMapping
-    public User update(@RequestBody User user) {
-        return service.update(user);
-    }
-
-    @DeleteMapping(path = "/{id}")
-    public void  delete(@PathVariable Long id) {
-        service.delete(id);
+        return repository.findAll();
     }
 }
